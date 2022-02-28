@@ -1,0 +1,4 @@
+baseURL: https://sparktype.io
+languageCode: 'en-us'
+title: SparkType
+theme: hugo-book
