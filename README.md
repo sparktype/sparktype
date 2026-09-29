@@ -1,9 +1,17 @@
 <h1 align="center">SangSun Park</h1>
 
+<p align="center"><b>spark</b></p>
+
 <p align="center">
-  Hyundai Motors Company R&amp;D · Seoul
+  디지털 크리에이터
   <br>
+  현대자동차 연구소 책임연구원 · 서울
+</p>
+
+<p align="center">
   <a href="https://sparktype.dev">sparktype.dev</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.facebook.com/sparkman76">Facebook</a>
 </p>
 
 <p align="center">
