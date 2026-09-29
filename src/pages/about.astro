@@ -1,0 +1,21 @@
+---
+import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="소개"
+	description="Sparktype 블로그입니다."
+	pubDate={new Date('2026-09-30')}
+	heroImage={AboutHeroImage}
+>
+	<p>
+		이 사이트는 Sparktype의 블로그입니다. 글은 이 저장소의 <code>src/content/blog/</code>에 있고,
+		<code>main</code> 브랜치에 푸시하면 GitHub Actions가 사이트를 빌드해 GitHub Pages에 올립니다.
+	</p>
+	<p>
+		배포 주소는 <a href="https://sparktype.github.io/sparktype/">sparktype.github.io/sparktype</a>입니다.
+		사용자 사이트(<code>sparktype.github.io</code> 저장소)로 옮기면 주소는 도메인 루트가 되고,
+		설정은 <code>astro.config.mjs</code>가 저장소 이름에 맞춰 바꿉니다.
+	</p>
+</Layout>
