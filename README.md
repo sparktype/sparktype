@@ -1,24 +1,31 @@
-# Sparktype
+<h1 align="center">SangSun Park</h1>
 
-Astro 정적 블로그입니다. `main`에 푸시하면 GitHub Actions가 GitHub Pages로 배포합니다.
+<p align="center">
+  Hyundai Motors Company R&amp;D · Seoul
+  <br>
+  <a href="https://sparktype.dev">sparktype.dev</a>
+</p>
 
-로컬 주소는 [http://localhost:4321/](http://localhost:4321/)이고, 배포 주소는 [https://sparktype.dev/](https://sparktype.dev/)입니다.
+<p align="center">
+  글을 쓰고, 에이전트가 쓰는 작은 도구를 만듭니다.
+</p>
 
-## 명령
+## 작업
 
-| 명령 | 하는 일 |
+| | |
 | --- | --- |
-| `bun install` | 의존성 설치 |
-| `bun run dev` | 개발 서버 |
-| `bun run build` | `dist/`에 정적 사이트 빌드 |
-| `bun run preview` | 빌드 결과 미리보기 |
+| [**sparktype.dev**](https://sparktype.dev) | 이 저장소에서 배포하는 블로그 |
+| [**sagebox**](https://github.com/sparktype/sagebox) | AI 에이전트용 비밀 금고. 값은 암호화된 금고에만 있고, 프로그램에는 환경 변수로만 넘긴다 |
+| [**decide**](https://github.com/sparktype/decide) | 문장을 만들지 않고 선택, 점수, 확률을 돌려주는 판단 도구 |
+| [**springcloud-on-kubernetes**](https://github.com/sparktype/springcloud-on-kubernetes) | Spring Cloud 서비스를 Kubernetes에 올리는 예제 |
 
-글은 `src/content/blog/`에 `.md` 또는 `.mdx`로 추가합니다.
+`sagebox`와 `decide`는 [sparktype/tap](https://github.com/sparktype/homebrew-tap)으로 설치할 수 있다.
 
-## 배포
+```sh
+brew install sparktype/tap/sagebox
+brew install sparktype/tap/decide
+```
 
-1. 이 폴더를 GitHub 저장소의 `main` 브랜치로 푸시합니다. 커스텀 도메인은 `public/CNAME`의 `sparktype.dev`입니다.
-2. 저장소 Settings → Pages → Source를 **GitHub Actions**로 선택합니다.
-3. 이후 `main` 푸시마다 `.github/workflows/deploy.yml`이 빌드하고 배포합니다. Actions 탭에서 수동 실행도 됩니다.
+## 이 저장소
 
-`github.com/sparktype/sparktype`은 GitHub 프로필 README 저장소입니다. 이 블로그를 그 저장소에 푸시하면 프로필 README가 이 프로젝트의 README로 바뀝니다.
+`sparktype/sparktype`은 GitHub 프로필이자 블로그 소스다. 글을 추가하고 배포하는 방법은 [BLOG.md](./BLOG.md)에 있다.
