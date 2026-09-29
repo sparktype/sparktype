@@ -2,7 +2,7 @@
 
 Astro 정적 블로그입니다. `main`에 푸시하면 GitHub Actions가 GitHub Pages로 배포합니다.
 
-로컬 주소는 [http://localhost:4321/sparktype/](http://localhost:4321/sparktype/)이고, 배포 주소는 [https://sparktype.github.io/sparktype/](https://sparktype.github.io/sparktype/)입니다.
+로컬 주소는 [http://localhost:4321/](http://localhost:4321/)이고, 배포 주소는 [https://sparktype.dev/](https://sparktype.dev/)입니다.
 
 ## 명령
 
@@ -17,7 +17,7 @@ Astro 정적 블로그입니다. `main`에 푸시하면 GitHub Actions가 GitHub
 
 ## 배포
 
-1. 이 폴더를 GitHub 저장소의 `main` 브랜치로 푸시합니다. 저장소 이름이 `sparktype`이면 사이트 경로는 `/sparktype`입니다. `sparktype.github.io`라는 사용자 사이트 저장소라면 경로는 `/`입니다. `astro.config.mjs`가 `GITHUB_REPOSITORY`로 둘을 구분합니다.
+1. 이 폴더를 GitHub 저장소의 `main` 브랜치로 푸시합니다. 커스텀 도메인은 `public/CNAME`의 `sparktype.dev`입니다.
 2. 저장소 Settings → Pages → Source를 **GitHub Actions**로 선택합니다.
 3. 이후 `main` 푸시마다 `.github/workflows/deploy.yml`이 빌드하고 배포합니다. Actions 탭에서 수동 실행도 됩니다.
 

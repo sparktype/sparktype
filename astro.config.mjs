@@ -4,17 +4,9 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
 
-// GitHub Actions sets GITHUB_REPOSITORY to "owner/repo".
-// A repository named "<owner>.github.io" is served at the domain root.
-// Any other name is a project site at https://<owner>.github.io/<repo>/.
-const repository = process.env.GITHUB_REPOSITORY ?? 'sparktype/sparktype';
-const [owner, repo] = repository.split('/');
-const userSite = repo === `${owner}.github.io`;
-
 // https://astro.build/config
 export default defineConfig({
-	site: `https://${owner}.github.io`,
-	base: userSite ? '/' : `/${repo}`,
+	site: 'https://sparktype.dev',
 	integrations: [mdx(), sitemap()],
 	fonts: [
 		{

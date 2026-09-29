@@ -9,7 +9,7 @@ heroImage: ../../assets/blog-placeholder-1.jpg
 
 ## 글 추가하기
 
-`src/content/blog/`에 `.md` 또는 `.mdx` 파일을 만듭니다. 파일 이름이 주소가 됩니다. 이 파일의 경로는 `blog/welcome`이고, 배포되면 `https://sparktype.github.io/sparktype/blog/welcome/`입니다.
+`src/content/blog/`에 `.md` 또는 `.mdx` 파일을 만듭니다. 파일 이름이 주소가 됩니다. 이 파일의 주소는 `https://sparktype.dev/blog/welcome/`입니다.
 
 ```md
 ---
