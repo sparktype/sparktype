@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/profile/overview.svg" alt="경력은 Hyundai Motor Company, KT, Coupang, Hancom 순이며 기간은 적지 않았다. 기술은 Kubernetes, AWS, CI/CD, Spring Cloud, Netflix OSS, Scala, RxJava, iOS, Android, React Native. 자격은 AWS Solutions Architect, Scrum Alliance ScrumMaster, 만료된 Certified Kubernetes Administrator." width="880">
+  <img src="assets/profile/overview.svg" alt="경력은 Hyundai Motor Company, KT, Coupang, Hancom 순이며 기간은 적지 않았다. 기술은 Python, Scala, Java, Rust, Go, Spark, Kafka, Iceberg, ClickHouse, Kubernetes, Airflow, Docker, NiFi. 자격은 AWS Solutions Architect, Scrum Alliance ScrumMaster, Certified Kubernetes Administrator." width="880">
 </p>
 
 ## 작업
