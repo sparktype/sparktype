@@ -3,20 +3,36 @@
 <p align="center"><b>spark</b></p>
 
 <p align="center">
-  디지털 크리에이터
+  Cloud Native DevOps Engineer
   <br>
-  현대자동차 연구소 책임연구원 · 서울
+  Hyundai Motor Company 책임연구원 · 서울
 </p>
 
 <p align="center">
   <a href="https://sparktype.dev">sparktype.dev</a>
   &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/sangsun-park-79b3081a/">LinkedIn</a>
+  &nbsp;·&nbsp;
   <a href="https://www.facebook.com/sparkman76">Facebook</a>
 </p>
 
 <p align="center">
-  글을 쓰고, 에이전트가 쓰는 작은 도구를 만듭니다.
+  Kubernetes, AWS, CI/CD. Spring Cloud, Netflix OSS, Scala, RxJava.
+  <br>
+  iOS, Android, React Native.
 </p>
+
+## 경력
+
+| 기간 | |
+| --- | --- |
+| 2021.02– | Senior Researcher, Hyundai Motor Company |
+| 2019.12–2021.02 | Senior Engineering Manager, KT. Giga Genie AI Platform |
+| 2018.03–2019.12 | Software Engineer, Coupang |
+| 2012.04–2018.03 | Senior Application Architect, KT. GiGA IoT 플랫폼, Giga Genie 개발자 포털 |
+| 2007.01–2011.04 | Senior Researcher, Hancom |
+
+AWS Solutions Architect. Certified ScrumMaster, Scrum Alliance, 2020.
 
 ## 작업
 
