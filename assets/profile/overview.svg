@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 908" role="img" aria-labelledby="title desc" font-family="Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Segoe UI, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 868" role="img" aria-labelledby="title desc" font-family="Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Segoe UI, sans-serif">
   <title id="title">경력, 기술, 자격</title>
-  <desc id="desc">기간 없이 적은 경력. 기술은 Python, Scala, Java, Rust, Go, Spark, Kafka, Iceberg, ClickHouse, Kubernetes, Airflow, Docker, NiFi. 자격은 AWS Solutions Architect, Certified ScrumMaster, Certified Kubernetes Administrator.</desc>
-  <rect width="880" height="908" rx="22" fill="#f4efe6"/>
+  <desc id="desc">기간 없이 적은 경력. 기술은 에이전트의 MCP, GraphRAG, Rust, Python, 레이크하우스의 Iceberg, Spark, Kafka, ClickHouse, 플랫폼의 Kubernetes, OpenTelemetry, Airflow, Go. 자격은 AWS Solutions Architect, Certified ScrumMaster, Certified Kubernetes Administrator.</desc>
+  <rect width="880" height="868" rx="22" fill="#f4efe6"/>
   <rect width="880" height="6" fill="#d4531b"/>
 
   <text x="36" y="46" fill="#8a8176" font-size="13" font-weight="700" letter-spacing="2">경력</text>
@@ -31,41 +31,40 @@
 
   <text x="36" y="508" fill="#8a8176" font-size="13" font-weight="700" letter-spacing="2">기술</text>
 
-  <rect x="28" y="526" width="264" height="196" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
-  <rect x="308" y="526" width="264" height="196" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
-  <rect x="588" y="526" width="264" height="196" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
+  <rect x="28" y="526" width="264" height="172" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
+  <rect x="308" y="526" width="264" height="172" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
+  <rect x="588" y="526" width="264" height="172" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
 
-  <text x="48" y="556" fill="#d4531b" font-size="13" font-weight="700">언어</text>
-  <text x="48" y="586" fill="#1c1915" font-size="16">Python</text>
-  <text x="48" y="610" fill="#1c1915" font-size="16">Scala</text>
-  <text x="48" y="634" fill="#1c1915" font-size="16">Java</text>
-  <text x="48" y="658" fill="#1c1915" font-size="16">Rust</text>
-  <text x="48" y="682" fill="#1c1915" font-size="16">Go</text>
+  <text x="48" y="556" fill="#d4531b" font-size="13" font-weight="700">에이전트</text>
+  <text x="48" y="586" fill="#1c1915" font-size="16">MCP</text>
+  <text x="48" y="610" fill="#1c1915" font-size="16">GraphRAG</text>
+  <text x="48" y="634" fill="#1c1915" font-size="16">Rust</text>
+  <text x="48" y="658" fill="#1c1915" font-size="16">Python</text>
 
-  <text x="328" y="556" fill="#d4531b" font-size="13" font-weight="700">데이터</text>
-  <text x="328" y="586" fill="#1c1915" font-size="16">Spark</text>
-  <text x="328" y="610" fill="#1c1915" font-size="16">Kafka</text>
-  <text x="328" y="634" fill="#1c1915" font-size="16">Iceberg</text>
+  <text x="328" y="556" fill="#d4531b" font-size="13" font-weight="700">레이크하우스</text>
+  <text x="328" y="586" fill="#1c1915" font-size="16">Iceberg</text>
+  <text x="328" y="610" fill="#1c1915" font-size="16">Spark</text>
+  <text x="328" y="634" fill="#1c1915" font-size="16">Kafka</text>
   <text x="328" y="658" fill="#1c1915" font-size="16">ClickHouse</text>
 
   <text x="608" y="556" fill="#d4531b" font-size="13" font-weight="700">플랫폼</text>
   <text x="608" y="586" fill="#1c1915" font-size="16">Kubernetes</text>
-  <text x="608" y="610" fill="#1c1915" font-size="16">Airflow</text>
-  <text x="608" y="634" fill="#1c1915" font-size="16">Docker</text>
-  <text x="608" y="658" fill="#1c1915" font-size="16">NiFi</text>
+  <text x="608" y="610" fill="#1c1915" font-size="16">OpenTelemetry</text>
+  <text x="608" y="634" fill="#1c1915" font-size="16">Airflow</text>
+  <text x="608" y="658" fill="#1c1915" font-size="16">Go</text>
 
-  <text x="36" y="770" fill="#8a8176" font-size="13" font-weight="700" letter-spacing="2">자격</text>
+  <text x="36" y="742" fill="#8a8176" font-size="13" font-weight="700" letter-spacing="2">자격</text>
 
-  <rect x="28" y="788" width="264" height="92" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
-  <rect x="308" y="788" width="264" height="92" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
-  <rect x="588" y="788" width="264" height="92" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
+  <rect x="28" y="760" width="264" height="84" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
+  <rect x="308" y="760" width="264" height="84" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
+  <rect x="588" y="760" width="264" height="84" rx="14" fill="#fffdf8" stroke="#e4d9c8"/>
 
-  <text x="48" y="828" fill="#1c1915" font-size="18" font-weight="700">AWS</text>
-  <text x="48" y="852" fill="#6f675e" font-size="14">Solutions Architect</text>
+  <text x="48" y="794" fill="#1c1915" font-size="18" font-weight="700">AWS</text>
+  <text x="48" y="818" fill="#6f675e" font-size="14">Solutions Architect</text>
 
-  <text x="328" y="828" fill="#1c1915" font-size="18" font-weight="700">ScrumMaster</text>
-  <text x="328" y="852" fill="#6f675e" font-size="14">Scrum Alliance</text>
+  <text x="328" y="794" fill="#1c1915" font-size="18" font-weight="700">ScrumMaster</text>
+  <text x="328" y="818" fill="#6f675e" font-size="14">Scrum Alliance</text>
 
-  <text x="608" y="828" fill="#1c1915" font-size="18" font-weight="700">Kubernetes</text>
-  <text x="608" y="852" fill="#6f675e" font-size="14">Administrator</text>
+  <text x="608" y="794" fill="#1c1915" font-size="18" font-weight="700">Kubernetes</text>
+  <text x="608" y="818" fill="#6f675e" font-size="14">Administrator</text>
 </svg>
