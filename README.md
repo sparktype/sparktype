@@ -17,22 +17,8 @@
 </p>
 
 <p align="center">
-  Kubernetes, AWS, CI/CD. Spring Cloud, Netflix OSS, Scala, RxJava.
-  <br>
-  iOS, Android, React Native.
+  <img src="assets/profile/overview.svg" alt="경력은 Hyundai Motor Company, KT, Coupang, Hancom 순이며 기간은 적지 않았다. 기술은 Kubernetes, AWS, CI/CD, Spring Cloud, Netflix OSS, Scala, RxJava, iOS, Android, React Native. 자격은 AWS Solutions Architect, Scrum Alliance ScrumMaster, 만료된 Certified Kubernetes Administrator." width="880">
 </p>
-
-## 경력
-
-| 기간 | |
-| --- | --- |
-| 2021.02– | Senior Researcher, Hyundai Motor Company |
-| 2019.12–2021.02 | Senior Engineering Manager, KT. Giga Genie AI Platform |
-| 2018.03–2019.12 | Software Engineer, Coupang |
-| 2012.04–2018.03 | Senior Application Architect, KT. GiGA IoT 플랫폼, Giga Genie 개발자 포털 |
-| 2007.01–2011.04 | Senior Researcher, Hancom |
-
-AWS Solutions Architect. Certified ScrumMaster, Scrum Alliance, 2020.
 
 ## 작업
 
