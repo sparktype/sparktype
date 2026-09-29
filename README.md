@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/profile/overview.svg" alt="경력은 Hyundai Motor Company, KT, Coupang, Hancom 순이며 기간은 적지 않았다. 기술은 에이전트의 MCP, GraphRAG, Rust, Python, 레이크하우스의 Iceberg, Spark, Kafka, ClickHouse, 플랫폼의 Kubernetes, OpenTelemetry, Airflow, Go. 자격은 AWS Solutions Architect, Scrum Alliance ScrumMaster, Certified Kubernetes Administrator." width="880">
+  <img src="assets/profile/overview.png" alt="경력은 Hyundai Motor Company, KT, Coupang, Hancom 순이며 기간은 적지 않았다. 기술은 에이전트의 MCP, GraphRAG, Rust, Python, 레이크하우스의 Iceberg, Spark, Kafka, ClickHouse, 플랫폼의 Kubernetes, OpenTelemetry, Airflow, Go. 자격은 AWS Solutions Architect, Scrum Alliance ScrumMaster, Certified Kubernetes Administrator." width="880">
 </p>
 
 ## 작업
