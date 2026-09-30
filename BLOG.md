@@ -13,7 +13,11 @@ Astro 정적 블로그다. `main`에 푸시하면 GitHub Actions가 GitHub Pages
 | `bun run build` | `dist/`에 정적 사이트 빌드 |
 | `bun run preview` | 빌드 결과 미리보기 |
 
-글은 `src/content/blog/`에 `.md` 또는 `.mdx`로 추가한다.
+글은 `src/content/posts/<slug>/index.md`(또는 `index.mdx`)로 추가한다. frontmatter는
+`title`, `excerpt`, `category`(`src/config/categories.ts`에 등록된 값과 일치해야 함),
+`date`, `author.{name,role}`, `featured`, `draft`를 쓴다. 커버 이미지가 있으면 같은 폴더에
+`cover.jpg`를 두고 frontmatter의 `cover.src`로 가리킨다(선택, 목록에는 노출되지 않고 글
+본문에서만 보임).
 
 ## 배포
 

@@ -1,19 +1,70 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import { getCollection } from 'astro:content';
+import SiteFooter from '@/components/SiteFooter.astro';
+import SiteHeader from '@/components/SiteHeader.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { siteConfig } from '@/config/site';
+import { authorSlug, getAllAuthors, visiblePosts } from '@/lib/posts';
+
+const allPosts = visiblePosts(await getCollection('posts'));
+const authors = getAllAuthors(allPosts);
 ---
 
-<Layout
-	title="소개"
-	description="Sparktype 블로그입니다."
-	pubDate={new Date('2026-09-30')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		이 사이트는 Sparktype의 블로그입니다. 글은 이 저장소의 <code>src/content/blog/</code>에 있고,
-		<code>main</code> 브랜치에 푸시하면 GitHub Actions가 사이트를 빌드해 GitHub Pages에 올립니다.
-	</p>
-	<p>
-		주소는 <a href="https://sparktype.dev/">sparktype.dev</a>입니다.
-	</p>
-</Layout>
+<BaseLayout title="소개" description={`${siteConfig.name} 소개 — 무엇을 다루고 누가 쓰는지.`}>
+	<SiteHeader posts={allPosts} />
+	<main id="content" class="outer">
+		<div class="canvas">
+			<header class="pagehead">
+				<p class="eyebrow">소개</p>
+				<h1 class="pagehead-title">{siteConfig.name}</h1>
+				<p class="pagehead-description">{siteConfig.about}</p>
+			</header>
+
+			<div class="prose">
+				<h2>무엇을 다루나요</h2>
+				<p>
+					데이터 플랫폼과 에이전트 도구를 만들며 겪은 문제와 해법을 정리한 기술 노트입니다. 순수한 기술
+					내용만 다루며, 특정 회사나 사내 시스템에 관한 정보는 담지 않습니다.
+				</p>
+
+				<h2>만드는 것</h2>
+				<ul>
+					<li>
+						<a href="https://github.com/sparktype/sagebox">sagebox</a> — AI 에이전트를 위한 비밀 금고.
+						값은 암호화해 보관하고 필요한 프로그램에 환경 변수로 전달합니다.
+					</li>
+					<li>
+						<a href="https://github.com/sparktype/decide">decide</a> — 문장 대신 선택, 점수, 확률을
+						반환하는 판단 도구입니다.
+					</li>
+				</ul>
+
+				<h2>쓰는 사람</h2>
+				<ul>
+					{
+						authors.map((author) => (
+							<li>
+								<a href={`/author/${authorSlug(author.name)}/`}>{author.name}</a> — {author.role} (
+								{author.posts.length}편)
+							</li>
+						))
+					}
+				</ul>
+
+				<h2>연락</h2>
+				<p>
+					질문이나 정정 요청은 <a href="/contact/">문의 페이지</a>를 통해 남겨 주세요.
+				</p>
+				{
+					siteConfig.email && (
+						<p>
+							또는 <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>로 바로 메일을 보내도
+							됩니다.
+						</p>
+					)
+				}
+			</div>
+		</div>
+	</main>
+	<SiteFooter />
+</BaseLayout>
