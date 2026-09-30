@@ -23,37 +23,17 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v7
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
         with:
-          bun-version: 1.4.2
+          node-version: 22.23.3
+          cache: npm
 
-      # 진단 결과: 이 러너에서 registry.npmjs.org의 A(IPv4) 레코드는 조회는
-      # 되지만(dig), bun의 리졸버는 AAAA(IPv6) 응답을 그대로 타다 연결에
-      # 실패해 DNSResolveFailed로 나타난다. gai.conf로 순서만 바꾸는 시도는
-      # 효과가 없었으므로, 커널 레벨에서 IPv6 소켓 자체를 비활성화해
-      # bun이 IPv4로만 붙게 강제한다.
-      - name: Disable IPv6 to force IPv4-only DNS resolution
-        run: |
-          sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
-          sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
-          sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
-
-      # 위 수정 후에도 혹시 남을 수 있는 일시적 네트워크 실패에 대한 안전망으로
-      # ulimit을 올리고 Bun의 네트워크 동시성을 낮춘 뒤 최대 3회 재시도한다.
-      - name: Install dependencies (with retry)
-        run: |
-          ulimit -n 65536
-          for attempt in 1 2 3; do
-            echo "install attempt $attempt"
-            bun install --frozen-lockfile --network-concurrency=8 && exit 0
-            echo "attempt $attempt failed, retrying in $((attempt * 10))s"
-            sleep $((attempt * 10))
-          done
-          exit 1
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
       - name: Build
-        run: bun run build
+        run: npm run build
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v5
