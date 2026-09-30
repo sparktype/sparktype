@@ -28,11 +28,15 @@ jobs:
         with:
           bun-version: 1.4.2
 
-      # GitHub Actions 러너에서 bun install이 tarball을 동시에 많이 받으면
-      # DNS 조회가 실패하는 경우가 있다(known runner IPv6 DNS flake). 실패 시
-      # 최대 3회, 점점 늘어나는 대기시간을 두고 재시도한다.
+      # Linux에서 getaddrinfo는 기본적으로 캐싱되지 않는데, bun install이
+      # 짧은 시간에 동시 DNS 조회를 몰아서 보내면 파일 디스크립터가 고갈되어
+      # (EMFILE) DNSResolveFailed로 나타나는 known 이슈다(oven-sh/bun#10731).
+      # ulimit을 올리고 동시성을 낮춘 뒤에도, 실패 시 최대 3회 재시도한다.
       - name: Install dependencies (with retry)
+        env:
+          BUN_CONFIG_NETWORK_CONCURRENCY: '8'
         run: |
+          ulimit -n 65536
           for attempt in 1 2 3; do
             echo "install attempt $attempt"
             bun install && exit 0

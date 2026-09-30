@@ -1,4 +1,5 @@
 [install]
-# GitHub Actions 러너에서 동시 tarball 다운로드가 많으면 DNS 조회가 실패하는
-# 문제(DNSResolveFailed)가 있어 기본값(48)보다 낮춰 안정성을 우선한다.
-networkConcurrency = 16
+# Linux 러너에서 getaddrinfo가 캐싱되지 않아, 동시 DNS 조회가 몰리면 파일
+# 디스크립터가 고갈되어 DNSResolveFailed로 나타나는 문제(oven-sh/bun#10731)가
+# 있다. 기본값(48)보다 크게 낮춰 안정성을 우선한다.
+networkConcurrency = 8
