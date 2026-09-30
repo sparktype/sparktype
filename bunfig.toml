@@ -1,0 +1,4 @@
+[install]
+# GitHub Actions 러너에서 동시 tarball 다운로드가 많으면 DNS 조회가 실패하는
+# 문제(DNSResolveFailed)가 있어 기본값(48)보다 낮춰 안정성을 우선한다.
+networkConcurrency = 16
