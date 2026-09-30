@@ -28,6 +28,14 @@ jobs:
         with:
           bun-version: 1.4.2
 
+      - name: Diagnose DNS
+        run: |
+          cat /etc/resolv.conf || true
+          getent hosts registry.npmjs.org || echo "getent failed"
+          for i in 1 2 3 4 5; do
+            curl -sS -m 5 -o /dev/null -w "attempt $i: %{http_code} (%{time_total}s)\n" https://registry.npmjs.org/astro || echo "attempt $i: curl failed"
+          done
+
       # Linux에서 getaddrinfo는 기본적으로 캐싱되지 않는데, bun install이
       # 짧은 시간에 동시 DNS 조회를 몰아서 보내면 파일 디스크립터가 고갈되어
       # (EMFILE) DNSResolveFailed로 나타나는 known 이슈다(oven-sh/bun#10731).
