@@ -28,12 +28,16 @@ jobs:
         with:
           bun-version: 1.4.2
 
-      # 진단 결과: 이 러너의 DNS는 registry.npmjs.org를 IPv6 주소만 반환하고
-      # (getent hosts), curl은 Happy Eyeballs로 성공하지만 bun의 리졸버는
-      # IPv6 경로를 그대로 타다 실패해 DNSResolveFailed로 나타난다. gai.conf로
-      # IPv4를 우선하도록 만들어 근본 원인을 해결한다.
-      - name: Prefer IPv4 over IPv6 for DNS resolution
-        run: echo "precedence ::ffff:0:0/96 100" | sudo tee -a /etc/gai.conf
+      # 진단 결과: 이 러너에서 registry.npmjs.org의 A(IPv4) 레코드는 조회는
+      # 되지만(dig), bun의 리졸버는 AAAA(IPv6) 응답을 그대로 타다 연결에
+      # 실패해 DNSResolveFailed로 나타난다. gai.conf로 순서만 바꾸는 시도는
+      # 효과가 없었으므로, 커널 레벨에서 IPv6 소켓 자체를 비활성화해
+      # bun이 IPv4로만 붙게 강제한다.
+      - name: Disable IPv6 to force IPv4-only DNS resolution
+        run: |
+          sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+          sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+          sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
 
       # 위 수정 후에도 혹시 남을 수 있는 일시적 네트워크 실패에 대한 안전망으로
       # ulimit을 올리고 동시성을 낮춘 뒤 최대 3회 재시도한다.
