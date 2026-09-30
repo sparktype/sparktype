@@ -40,15 +40,13 @@ jobs:
           sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
 
       # 위 수정 후에도 혹시 남을 수 있는 일시적 네트워크 실패에 대한 안전망으로
-      # ulimit을 올리고 동시성을 낮춘 뒤 최대 3회 재시도한다.
+      # ulimit을 올리고 Bun의 네트워크 동시성을 낮춘 뒤 최대 3회 재시도한다.
       - name: Install dependencies (with retry)
-        env:
-          BUN_CONFIG_NETWORK_CONCURRENCY: '8'
         run: |
           ulimit -n 65536
           for attempt in 1 2 3; do
             echo "install attempt $attempt"
-            bun install && exit 0
+            bun install --frozen-lockfile --network-concurrency=8 && exit 0
             echo "attempt $attempt failed, retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
           done
