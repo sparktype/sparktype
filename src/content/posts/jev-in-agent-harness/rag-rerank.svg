@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 376" width="720" height="376" role="img" aria-labelledby="rag-rerank-title rag-rerank-desc">
+<title id="rag-rerank-title">RAG 리랭킹 깔때기</title>
+<desc id="rag-rerank-desc">검색으로 가져온 25개 구절을 Jev가 점수화해 상위 5개만 골라 LLM에 넘기는 깔때기 흐름도.</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+<marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#eb6c36"/></marker>
+<marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f5f5f5"/>
+<path d="M240 72 V104" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<path d="M240 152 V184" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+<path d="M240 232 V264" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+<rect x="40.0" y="24" width="400" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="40.0" y="24" width="400" height="48" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="240.0" y="44" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">넓게 검색</text>
+<text x="240.0" y="60" fill="#4f5d75" font-size="9" font-family="'Geist Mono',ui-monospace,Menlo,monospace" text-anchor="middle">BM25 / embedding · 25 passages</text>
+<text x="470" y="52" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">재현율 위주로 넉넉하게</text>
+<rect x="80.0" y="104" width="320" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="80.0" y="104" width="320" height="48" rx="6" fill="rgba(46,90,168,0.08)" stroke="#2e5aa8" stroke-width="1"/>
+<text x="240.0" y="124" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">관련도 점수화</text>
+<text x="240.0" y="140" fill="#4f5d75" font-size="9" font-family="'Geist Mono',ui-monospace,Menlo,monospace" text-anchor="middle">Jev · score</text>
+<text x="470" y="132" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">별도 리랭커 모델이 필요 없음</text>
+<rect x="120.0" y="184" width="240" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="120.0" y="184" width="240" height="48" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="240.0" y="204" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">상위 5개 선별</text>
+<text x="240.0" y="220" fill="#4f5d75" font-size="9" font-family="'Geist Mono',ui-monospace,Menlo,monospace" text-anchor="middle">top-5</text>
+<text x="470" y="212" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">LLM에 넘길 토큰 절감</text>
+<rect x="150.0" y="264" width="180" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="150.0" y="264" width="180" height="48" rx="6" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1"/>
+<text x="240.0" y="292.0" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">LLM이 답변 생성</text>
+<line x1="30" y1="332" x2="690" y2="332" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="30" y="346" width="16" height="12" rx="3" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="54" y="356" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">일반 단계</text>
+<rect x="160" y="346" width="16" height="12" rx="3" fill="rgba(46,90,168,0.08)" stroke="#2e5aa8" stroke-width="1"/>
+<text x="184" y="356" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">Jev 결정 호출</text>
+<rect x="310" y="346" width="16" height="12" rx="3" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1"/>
+<text x="334" y="356" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">최종 생성</text>
+</svg>

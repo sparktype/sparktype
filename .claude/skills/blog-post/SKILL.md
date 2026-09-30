@@ -42,3 +42,12 @@ print(' '.join(s.text for s in Y().fetch('<VIDEO_ID>', languages=['en','ko'])))"
 ```
 
 제목·채널은 `https://www.youtube.com/oembed?url=<URL>&format=json`에서 얻는다. 글머리에 원본 링크와 채널명을 반드시 밝힌다.
+
+## 다이어그램
+
+이해를 돕는 그림은 `diagram-design` 스킬의 규칙(직교 커넥터, 코랄 1~2곳, 라벨 마스크)을 따라 SVG로 그린다.
+
+- 글 폴더에 `<이름>.svg`로 두고 `![대체 텍스트](./이름.svg)`로 삽입한다. 대체 텍스트는 그림의 내용을 한 문장으로 쓴다.
+- 본문 폭에 맞게 `viewBox`는 720 너비로 잡는다. 더 넓으면 글자가 줄어 읽기 어렵다. 한글은 12px 이상.
+- `<img>`로 로드되는 SVG는 웹폰트를 못 쓴다. `font-family`에 `'Apple SD Gothic Neo'`, `'Noto Sans KR'`, `sans-serif` 폴백을 둔다.
+- 저장 전에 `qlmanage -t -s 1000 -o <dir> <file>.svg`로 PNG를 만들어 눈으로 확인한다.

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 456" width="720" height="456" role="img" aria-labelledby="skill-cascade-title skill-cascade-desc">
+<title id="skill-cascade-title">스킬 캐스케이드 분류기</title>
+<desc id="skill-cascade-desc">작업 텍스트를 Jev가 카테고리, 스킬 순으로 두 번 분류하고, 고른 스킬 파일만 LLM에 넘기는 흐름도.</desc>
+<defs>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+<marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#eb6c36"/></marker>
+<marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#f5f5f5"/>
+<path d="M170 72 V104" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<path d="M170 152 V184" fill="none" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+<path d="M170 232 V264" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+<path d="M170 312 V344" fill="none" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#arrow)"/>
+<rect x="40" y="24" width="260" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="40" y="24" width="260" height="48" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="170.0" y="52.0" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">작업 텍스트</text>
+<text x="330" y="52" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">“CEO 사칭 상품권 메일, 해킹인가?”</text>
+<rect x="40" y="104" width="260" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="40" y="104" width="260" height="48" rx="6" fill="rgba(46,90,168,0.08)" stroke="#2e5aa8" stroke-width="1"/>
+<text x="170.0" y="124" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">1단계 카테고리 선택</text>
+<text x="170.0" y="140" fill="#4f5d75" font-size="9" font-family="'Geist Mono',ui-monospace,Menlo,monospace" text-anchor="middle">choice</text>
+<text x="330" y="132" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">10개 카테고리 중 하나 → 보안·접근</text>
+<rect x="40" y="184" width="260" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="40" y="184" width="260" height="48" rx="6" fill="rgba(46,90,168,0.08)" stroke="#2e5aa8" stroke-width="1"/>
+<text x="170.0" y="204" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">2단계 스킬 선택</text>
+<text x="170.0" y="220" fill="#4f5d75" font-size="9" font-family="'Geist Mono',ui-monospace,Menlo,monospace" text-anchor="middle">choice</text>
+<text x="330" y="212" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">그 카테고리의 5개 스킬 중 하나 → 보안 경보 조사</text>
+<rect x="40" y="264" width="260" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="40" y="264" width="260" height="48" rx="6" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1"/>
+<text x="170.0" y="292.0" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">선택한 스킬 파일만 로드</text>
+<text x="330" y="292" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">프롬프트에는 카테고리 목록만 상시 유지</text>
+<rect x="40" y="344" width="260" height="48" rx="6" fill="#f5f5f5"/>
+<rect x="40" y="344" width="260" height="48" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="170.0" y="372.0" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif" text-anchor="middle">LLM이 인자 채우고 실행</text>
+<text x="330" y="372" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">스킬 본문을 보고 세부 작업 수행</text>
+<line x1="30" y1="412" x2="690" y2="412" stroke="rgba(45,49,66,0.10)" stroke-width="0.8"/>
+<rect x="30" y="426" width="16" height="12" rx="3" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+<text x="54" y="436" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">일반 단계</text>
+<rect x="160" y="426" width="16" height="12" rx="3" fill="rgba(46,90,168,0.08)" stroke="#2e5aa8" stroke-width="1"/>
+<text x="184" y="436" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">Jev 결정 호출</text>
+<rect x="310" y="426" width="16" height="12" rx="3" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1"/>
+<text x="334" y="436" fill="#4f5d75" font-size="12" font-family="'Geist','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif">토큰 절감 지점</text>
+</svg>
