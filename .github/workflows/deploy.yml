@@ -22,10 +22,32 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v7
-      - name: Install, build, and upload your site
-        uses: withastro/action@v6
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          package-manager: bun@1.4.2
+          bun-version: 1.4.2
+
+      # GitHub Actions 러너에서 bun install이 tarball을 동시에 많이 받으면
+      # DNS 조회가 실패하는 경우가 있다(known runner IPv6 DNS flake). 실패 시
+      # 최대 3회, 점점 늘어나는 대기시간을 두고 재시도한다.
+      - name: Install dependencies (with retry)
+        run: |
+          for attempt in 1 2 3; do
+            echo "install attempt $attempt"
+            bun install && exit 0
+            echo "attempt $attempt failed, retrying in $((attempt * 10))s"
+            sleep $((attempt * 10))
+          done
+          exit 1
+
+      - name: Build
+        run: bun run build
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./dist/
 
   deploy:
     needs: build
