@@ -28,18 +28,15 @@ jobs:
         with:
           bun-version: 1.4.2
 
-      - name: Diagnose DNS
-        run: |
-          cat /etc/resolv.conf || true
-          getent hosts registry.npmjs.org || echo "getent failed"
-          for i in 1 2 3 4 5; do
-            curl -sS -m 5 -o /dev/null -w "attempt $i: %{http_code} (%{time_total}s)\n" https://registry.npmjs.org/astro || echo "attempt $i: curl failed"
-          done
+      # 진단 결과: 이 러너의 DNS는 registry.npmjs.org를 IPv6 주소만 반환하고
+      # (getent hosts), curl은 Happy Eyeballs로 성공하지만 bun의 리졸버는
+      # IPv6 경로를 그대로 타다 실패해 DNSResolveFailed로 나타난다. gai.conf로
+      # IPv4를 우선하도록 만들어 근본 원인을 해결한다.
+      - name: Prefer IPv4 over IPv6 for DNS resolution
+        run: echo "precedence ::ffff:0:0/96 100" | sudo tee -a /etc/gai.conf
 
-      # Linux에서 getaddrinfo는 기본적으로 캐싱되지 않는데, bun install이
-      # 짧은 시간에 동시 DNS 조회를 몰아서 보내면 파일 디스크립터가 고갈되어
-      # (EMFILE) DNSResolveFailed로 나타나는 known 이슈다(oven-sh/bun#10731).
-      # ulimit을 올리고 동시성을 낮춘 뒤에도, 실패 시 최대 3회 재시도한다.
+      # 위 수정 후에도 혹시 남을 수 있는 일시적 네트워크 실패에 대한 안전망으로
+      # ulimit을 올리고 동시성을 낮춘 뒤 최대 3회 재시도한다.
       - name: Install dependencies (with retry)
         env:
           BUN_CONFIG_NETWORK_CONCURRENCY: '8'
